@@ -1,18 +1,4 @@
-
 Thanks for using the Plugin.
-
-Please go to the settings page in the dashboard for this plugin.
-It is always a good idea to disable the plugin and then update to new version, and then re-enable, and check settings.
-
-Please Consider sending a donation to Peregrine if you found this plugin useful.  You can find out how to donate in my other plugins. 
-
-Perhaps a contribution equivalent to a cup of coffee or a lunch, if this plugin helped you.
-
-
-Peregrine
-
-
-
 
 Some notes that may help you understand vanilla registration itself. (you may have to read this a few times to soak in, it may be confusing, but it will become crystal clear if you read it a few times).
 
