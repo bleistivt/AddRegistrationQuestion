@@ -7,6 +7,7 @@ $PluginInfo['AddRegistrationQuestion'] = array(
     'Author' => "Peregrine",
     'MobileFriendly' => TRUE,
     'SettingsUrl' => '/dashboard/settings/addregistrationquestion',
+    'License' => 'GNU GPL2'
 );
 
 class AddRegistrationQuestion extends Gdn_Plugin {
@@ -20,12 +21,12 @@ class AddRegistrationQuestion extends Gdn_Plugin {
     }
 
     public function AddQuestion($Sender) {
-        echo "<li>";
+        echo '<li>';
         echo $Sender->Form->Label(C('Plugins.AddRegistrationQuestion.Label','Enter your secret code'), 'SecretCode');
         echo $Sender->Form->TextBox('SecretCode');
-        echo "</li>";
+        echo '</li>';
 
-        if ($correctanswer == "N") {
+        if ($correctanswer == 'N') {
             $Sender->Validation->AddValidationResult('Secretcode', T('Please re-read all questions again and answer again'));
             $Sender->EventArguments['Valid'] = FALSE;
         }
@@ -36,11 +37,10 @@ class AddRegistrationQuestion extends Gdn_Plugin {
 
         $UserCode = $FormValues['SecretCode'];
 
-        $DefaultSecretCode = "Abc123";
+        $DefaultSecretCode = 'Abc123';
         $SecretCode = (C('Plugins.AddRegistrationQuestion.SecretCode', $DefaultSecretCode));
 
         if (strtolower($UserCode) != strtolower($SecretCode)) {
-
             $Sender->Form->AddError('Please enter Correct Code.');
             $Sender->Render();
             exit();
@@ -64,15 +64,16 @@ class AddRegistrationQuestion extends Gdn_Plugin {
             $Sender->Form->SetData($ConfigurationModel->Data);
         } else {
             $Data = $Sender->Form->FormValues();
-            if ($Sender->Form->Save() !== FALSE)
-                $Sender->StatusMessage = T("Your settings have been saved.");
+            if ($Sender->Form->Save() !== FALSE) {
+                $Sender->StatusMessage = T('Your settings have been saved.');
+            }
         }
         $Sender->Render($this->GetView('arq-settings.php'));
     }
 
     public function Setup() {
-        SaveToConfig('Plugins.AddRegistrationQuestion.SecretCode', "PeregrineWasHere123");
-        SaveToConfig('Plugins.AddRegistrationQuestion.Label', "Enter Your code");
+        SaveToConfig('Plugins.AddRegistrationQuestion.SecretCode', 'PeregrineWasHere123');
+        SaveToConfig('Plugins.AddRegistrationQuestion.Label', 'Enter Your code');
     }
 
 }
