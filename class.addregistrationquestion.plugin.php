@@ -40,13 +40,13 @@ class AddRegistrationQuestion extends Gdn_Plugin {
                 'Control' => 'textbox',
                 'LabelCode' => 'Question',
                 'Description' => 'Do not use the default question and change this from time to time for best results.',
-                'Default' => $this->question();
+                'Default' => $this->question()
             ],
             'AddRegistrationQuestion.Answer' => [
                 'Control' => 'textbox',
                 'LabelCode' => 'Answer',
                 'Description' => 'Note: The check for the correct answer is case-insensitive.',
-                'Default' => $this->answer();
+                'Default' => $this->answer()
             ],
             'AddRegistrationQuestion.Basic' => [
                 'Control' => 'checkbox',
