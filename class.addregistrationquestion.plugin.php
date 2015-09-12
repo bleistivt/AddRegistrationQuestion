@@ -35,24 +35,24 @@ class AddRegistrationQuestion extends Gdn_Plugin {
         $sender->permission('Garden.Settings.Manage');
         $sender->addSideMenu();
         $conf = new ConfigurationModule($sender);
-        $conf->initialize(array(
-            'AddRegistrationQuestion.Question' => array(
+        $conf->initialize([
+            'AddRegistrationQuestion.Question' => [
                 'Control' => 'textbox',
                 'LabelCode' => 'Question',
                 'Description' => 'Do not use the default question and change this from time to time for best results.',
                 'Default' => $this->question()
-            ),
-            'AddRegistrationQuestion.Answer' => array(
+            ],
+            'AddRegistrationQuestion.Answer' => [
                 'Control' => 'textbox',
                 'LabelCode' => 'Answer',
                 'Description' => 'Note: The check for the correct answer is case-insensitive.',
                 'Default' => $this->answer()
-            ),
-            'AddRegistrationQuestion.Basic' => array(
+            ],
+            'AddRegistrationQuestion.Basic' => [
                 'Control' => 'checkbox',
                 'LabelCode' => 'Use this as the only form of registration validation'
-            )
-        ));
+            ]
+        ]);
         $sender->title('Registration Question');
         $conf->renderAll();
     }
