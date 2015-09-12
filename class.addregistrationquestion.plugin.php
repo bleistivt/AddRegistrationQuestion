@@ -2,7 +2,7 @@
 
 $PluginInfo['AddRegistrationQuestion'] = [
     'Name' => 'Add Registration Question',
-    'Description' => 'Allows you to add a question to validate users during registration process to aid in stopping spam or bot registrants.',
+    'Description' => 'Allows you to add a question to the registration form to deflect spam bots.',
     'Version' => '2.0',
     'Author' => 'Peregrine',
     'MobileFriendly' => true,
