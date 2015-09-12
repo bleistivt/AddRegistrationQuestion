@@ -1,6 +1,6 @@
 <?php
 
-$PluginInfo['AddRegistrationQuestion'] = array(
+$PluginInfo['AddRegistrationQuestion'] = [
     'Name' => 'Add Registration Question',
     'Description' => 'Allows you to add a question to validate users during registration process to aid in stopping spam or bot registrants.',
     'Version' => '2.0',
@@ -9,7 +9,7 @@ $PluginInfo['AddRegistrationQuestion'] = array(
     'SettingsUrl' => 'settings/addregistrationquestion',
     'SettingsPermission' => 'Garden.Settings.Manage',
     'License' => 'GNU GPL2'
-);
+];
 
 class AddRegistrationQuestion extends Gdn_Plugin {
 
