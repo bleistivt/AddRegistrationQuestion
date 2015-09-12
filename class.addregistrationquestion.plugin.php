@@ -19,9 +19,11 @@ class AddRegistrationQuestion extends Gdn_Plugin {
         }
     }
 
+
     public function entryController_registerFormBeforeTerms_handler($sender) {
         echo wrap($sender->Form->label($this->question(), 'Question').$sender->Form->textBox('Question'), 'li');
     }
+
 
     public function entryController_registerValidation_handler($sender) {
         if (strcasecmp($sender->Form->getValue('Question'), $this->answer()) !== 0) {
@@ -30,6 +32,7 @@ class AddRegistrationQuestion extends Gdn_Plugin {
             exit();
         }
     }
+
 
     public function settingsController_addRegistrationQuestion_create($sender) {
         $sender->permission('Garden.Settings.Manage');
@@ -57,9 +60,11 @@ class AddRegistrationQuestion extends Gdn_Plugin {
         $conf->renderAll();
     }
 
+
     private function question() {
         return t(c('AddRegistrationQuestion.Question', 'Are you a bot?'));
     }
+
 
     private function answer() {
         return t(c('AddRegistrationQuestion.Answer', 'no'));
