@@ -3,19 +3,20 @@
 $PluginInfo['AddRegistrationQuestion'] = [
     'Name' => 'Add Registration Question',
     'Description' => 'Allows you to add a question to the registration form to deflect spam bots.',
-    'Version' => '2.0',
+    'Version' => '2.1',
     'Author' => 'Peregrine',
     'MobileFriendly' => true,
     'SettingsUrl' => 'settings/addregistrationquestion',
     'SettingsPermission' => 'Garden.Settings.Manage',
-    'License' => 'GNU GPL2'
+    'License' => 'GNU GPL2',
+    'GitHub' => 'bleistivt/AddRegistrationQuestion'
 ];
 
 class AddRegistrationQuestion extends Gdn_Plugin {
 
     public function gdn_dispatcher_appStartup_handler() {
         if (c('AddRegistrationQuestion.Basic')) {
-            saveToConfig('Garden.Registration.Method', 'Basic', false);
+            saveToConfig('Garden.Registration.SkipCaptcha', true, false);
         }
     }
 
@@ -53,7 +54,7 @@ class AddRegistrationQuestion extends Gdn_Plugin {
             ],
             'AddRegistrationQuestion.Basic' => [
                 'Control' => 'checkbox',
-                'LabelCode' => 'Use this as the only form of registration validation'
+                'LabelCode' => 'Use this as the only form of registration validation (disable CAPTCHA).'
             ]
         ]);
         $sender->title('Registration Question');
