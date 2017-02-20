@@ -66,7 +66,7 @@ class AddRegistrationQuestion extends Gdn_Plugin {
         $answers = explode(',', $this->answer());
 
         foreach ($answers as $answer) {
-            if (strcasecmp(trim($answer), $attempt)) {
+            if (strcasecmp(trim($answer), $attempt) == 0) {
                 return true;
             }
         }
