@@ -65,7 +65,7 @@ class AddRegistrationQuestion extends Gdn_Plugin {
     private function isCorrect($attempt = '') {
         $answers = explode(',', $this->answer());
 
-        for ($answers as $answer) {
+        foreach ($answers as $answer) {
             if (strcasecmp(trim($answer), $attempt)) {
                 return true;
             }
