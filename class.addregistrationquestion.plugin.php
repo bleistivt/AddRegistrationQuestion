@@ -27,7 +27,7 @@ class AddRegistrationQuestion extends Gdn_Plugin {
 
 
     public function entryController_registerValidation_handler($sender) {
-        if (strcasecmp($sender->Form->getValue('Question'), $this->answer()) !== 0) {
+        if (!$this->isCorrect($sender->Form->getValue('Question'))) {
             $sender->Form->addError('The security question was answered incorrectly.');
             $sender->render();
             exit();
@@ -60,6 +60,19 @@ class AddRegistrationQuestion extends Gdn_Plugin {
         $sender->title('Registration Question');
         $conf->renderAll();
     }
+
+
+    private function isCorrect($attempt = '') {
+        $answers = explode(',', $this->answer());
+
+        foreach ($answers as $answer) {
+            if (strcasecmp(trim($answer), $attempt) == 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }   
 
 
     private function question() {
