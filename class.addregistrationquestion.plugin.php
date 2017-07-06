@@ -3,7 +3,7 @@
 $PluginInfo['AddRegistrationQuestion'] = [
     'Name' => 'Add Registration Question',
     'Description' => 'Allows you to add a question to the registration form to deflect spam bots.',
-    'Version' => '2.1',
+    'Version' => '2.2',
     'Author' => 'Peregrine',
     'MobileFriendly' => true,
     'SettingsUrl' => 'settings/addregistrationquestion',
@@ -49,7 +49,7 @@ class AddRegistrationQuestion extends Gdn_Plugin {
             'AddRegistrationQuestion.Answer' => [
                 'Control' => 'textbox',
                 'LabelCode' => 'Answer',
-                'Description' => 'Note: The check for the correct answer is case-insensitive.',
+                'Description' => 'The check for the correct answer is case-insensitive. You can specify multiple comma-separated answers.',
                 'Default' => $this->answer()
             ],
             'AddRegistrationQuestion.Basic' => [
