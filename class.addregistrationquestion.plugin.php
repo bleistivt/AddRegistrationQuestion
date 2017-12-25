@@ -12,7 +12,7 @@ $PluginInfo['AddRegistrationQuestion'] = [
     'GitHub' => 'bleistivt/AddRegistrationQuestion'
 ];
 
-class AddRegistrationQuestion extends Gdn_Plugin {
+class AddRegistrationQuestionPlugin extends Gdn_Plugin {
 
     public function gdn_dispatcher_appStartup_handler() {
         if (c('AddRegistrationQuestion.Basic')) {
