@@ -1,0 +1,20 @@
+{
+    "name": "Add Registration Question",
+    "description": "Allows you to add a question to the registration form to deflect spam bots.",
+    "version": "2.3",
+    "settingsPermission": "Garden.Settings.Manage",
+    "settingsUrl": "settings/addregistrationquestion",
+    "license": "GNU GPL2",
+    "mobileFriendly": true,
+    "gitHub": "bleistivt/AddRegistrationQuestion",
+    "key": "addregistrationquestion",
+    "type": "addon",
+    "authors": [
+        {
+            "name": "Peregrine"
+        }
+    ],
+    "require": {
+        "vanilla": ">=2.5"
+    }
+}
