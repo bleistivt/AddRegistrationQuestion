@@ -1,17 +1,5 @@
 <?php
 
-$PluginInfo['AddRegistrationQuestion'] = [
-    'Name' => 'Add Registration Question',
-    'Description' => 'Allows you to add a question to the registration form to deflect spam bots.',
-    'Version' => '2.2',
-    'Author' => 'Peregrine',
-    'MobileFriendly' => true,
-    'SettingsUrl' => 'settings/addregistrationquestion',
-    'SettingsPermission' => 'Garden.Settings.Manage',
-    'License' => 'GNU GPL2',
-    'GitHub' => 'bleistivt/AddRegistrationQuestion'
-];
-
 class AddRegistrationQuestionPlugin extends Gdn_Plugin {
 
     public function gdn_dispatcher_appStartup_handler() {
