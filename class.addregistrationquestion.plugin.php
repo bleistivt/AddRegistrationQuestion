@@ -25,7 +25,7 @@ class AddRegistrationQuestionPlugin extends Gdn_Plugin {
 
     public function settingsController_addRegistrationQuestion_create($sender) {
         $sender->permission('Garden.Settings.Manage');
-        $sender->addSideMenu();
+        $sender->setHighlightRoute();
         $conf = new ConfigurationModule($sender);
         $conf->initialize([
             'AddRegistrationQuestion.Question' => [
