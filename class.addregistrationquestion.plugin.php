@@ -25,7 +25,8 @@ class AddRegistrationQuestionPlugin extends Gdn_Plugin {
 
     public function settingsController_addRegistrationQuestion_create($sender) {
         $sender->permission('Garden.Settings.Manage');
-        $sender->setHighlightRoute();
+        $sender->title('Registration Question');
+
         $conf = new ConfigurationModule($sender);
         $conf->initialize([
             'AddRegistrationQuestion.Question' => [
@@ -45,7 +46,7 @@ class AddRegistrationQuestionPlugin extends Gdn_Plugin {
                 'LabelCode' => 'Use this as the only form of registration validation (disable CAPTCHA).'
             ]
         ]);
-        $sender->title('Registration Question');
+
         $conf->renderAll();
     }
 
