@@ -3,7 +3,7 @@
 class AddRegistrationQuestionPlugin extends Gdn_Plugin {
 
     public function gdn_dispatcher_appStartup_handler() {
-        if (c('AddRegistrationQuestion.Basic')) {
+        if (Gdn::config('AddRegistrationQuestion.Basic')) {
             saveToConfig('Garden.Registration.SkipCaptcha', true, false);
         }
     }
@@ -65,12 +65,12 @@ class AddRegistrationQuestionPlugin extends Gdn_Plugin {
 
 
     private function question() {
-        return t(c('AddRegistrationQuestion.Question', 'Are you a bot?'));
+        return Gdn::translate(Gdn::config('AddRegistrationQuestion.Question', 'Are you a bot?'));
     }
 
 
     private function answer() {
-        return t(c('AddRegistrationQuestion.Answer', 'no'));
+        return Gdn::translate(Gdn::config('AddRegistrationQuestion.Answer', 'no'));
     }
 
 }
